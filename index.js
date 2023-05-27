@@ -4,10 +4,11 @@ const express=require('express');
 // server return an object
 const server=express();
 
-server.all('/api',(req,res)=>{
-   // served with any request (GET,POST,DELETE,PUT)
-    res.send(' Hello from api rout')
-})
+server.get('/api',(req,res,next)=>{
+   // served with any request (GET,POST,DELETE,PUT) 
+    console.log('ttttt'); 
+    next();
+},(req,res)=>{res.send('second ....')})
 
 server.get('/api/Search',(rq,rs)=>{
     // return query variables
