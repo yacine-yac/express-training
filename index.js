@@ -5,11 +5,15 @@ const express=require('express');
 const server=express();
 
 server.all('/api',(req,res)=>{
-   
-    // served with any request (GET,POST,DELETE,PUT)
-    
+   // served with any request (GET,POST,DELETE,PUT)
     res.send(' Hello from api rout')
+})
 
+server.get('/api/Search',(rq,rs)=>{
+    // return query variables
+    const query=rq.query;
+    console.log(query)
+    rs.send(`product name ${query?.name} `)
 })
 
 // static files 
