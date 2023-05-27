@@ -4,7 +4,13 @@ const express=require('express');
 // server return an object
 const server=express();
 
+server.all('/api',(req,res)=>{
+   
+    // served with any request (GET,POST,DELETE,PUT)
+    
+    res.send(' Hello from api rout')
 
+})
 
 // static files 
 server.use(express.static('./app'))
