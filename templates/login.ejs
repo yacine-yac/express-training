@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title> 
+        <style>
+            input:invalid + span{
+                    border: 2px solid red;
+                    background-color: red;
+      }
+        </style>
+    </head>
+<body>
+    <form action=<%=authUrl %> method='GET'>
+            <input type="email" name="email" placeholder="email">
+            <input type="password" name="password" placeholder="password" required pattern=".{3,}" title="yacine ok">
+            <input type="hidden" name="redirect" value=<%= redirect %> >
+            <button type="submit">Send</button> 
+    </form>
+    
+</body>
+</html>
+ 
